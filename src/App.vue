@@ -22,6 +22,9 @@
             id="first_name"
             placeholder=""
           />
+          <span class="error" v-if="v$.form.first_name.$error">
+            {{ v$.form.first_name.$errors[0].$message }}
+          </span>
         </div>
         <div>
           <label for="last_name" c>
@@ -36,6 +39,9 @@
             id="last_name"
             placeholder=""
           />
+          <span class="error" v-if="v$.form.last_name.$error">
+            {{ v$.form.last_name.$errors[0].$message }}
+          </span>
         </div>
         <div class="col-span-12">
           <label for="email">
@@ -59,9 +65,6 @@
             v-model:password="form.password"
             :errors="passwordErrors"
           />
-          <!-- <span class="text-red-700" v-if="errors.password">{{
-                    errors.password
-                  }}</span> -->
         </div>
       </div>
       <div>
@@ -133,8 +136,13 @@ export default {
     validateForm() {
       this.v$.$validate();
       if (!this.v$.$error) {
-        console.log("successful");
+        alert("Successful form validaiton");
       } else {
+        // alert("Failed form validaiton");
+        console.log(
+          "errors",
+          this.v$.$errors.map((error) => error.$message)
+        );
         if (this.v$.form.password.$error) {
           console.log(this.v$.form.password.$errors, "password error message");
           this.passwordErrors = this.v$.form.password.$errors.map(
