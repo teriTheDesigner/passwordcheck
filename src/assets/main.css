@@ -1,0 +1,58 @@
+@import "./base.css";
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+
+  justify-content: center;
+  font-weight: normal;
+  color: black;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#form div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step3 {
+  max-width: 450px;
+  margin-top: 1rem;
+  background-color: rgb(218, 245, 218);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.error {
+  color: red;
+  font-size: 0.7rem;
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.headline p {
+  font-size: 0.8rem;
+  color: rgb(92, 92, 92);
+}
+
+input {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid gray;
+  background-color: rgb(156, 197, 156);
+}
